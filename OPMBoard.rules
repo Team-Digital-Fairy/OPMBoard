@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 3)
+    (start_pass_no 6)
     (layer_rule F.Cu
       (active on)
       (preferred_direction horizontal)
@@ -65,13 +65,14 @@
     Power12 "Via[0-1]_800:400_um-Power12"
   )
   (class default
-    CH2 CH1 VBUS "Net-(J1-PadA4)" ~{IRQ} ~{IC} A0 ~{WR}
-    ~{RD} ~{CS} CT1 CT2 D0 D1 D2 D3
-    D4 D5 D6 D7 ~{ICL} "RCH_OUT" "LCH_OUT" "Net-(R1-Pad1)"
-    "Net-(R1-Pad2)" "unconnected-(SW1-Pad1)" "Net-(U2-Pad1)" "Net-(U2-Pad3)" "Net-(U2-Pad5)" SH2 SH1 DATA
-    PHI1 CLK "unconnected-(X1-Pad1)" "unconnected-(X2-Pad1)" "Net-(D1-Pad2)" "Net-(D2-Pad2)" "Net-(D3-Pad2)" "CLK_DIP8"
-    "CLK_DIP14" "Net-(J1-PadA5)" "unconnected-(J1-PadA6)" "unconnected-(J1-PadA7)" "unconnected-(J1-PadA8)" "Net-(J1-PadB5)" "unconnected-(J1-PadB6)" "unconnected-(J1-PadB7)"
-    "unconnected-(J1-PadB8)" "unconnected-(PS1-Pad5)"
+    CH2 CH1 "Net-(C8-Pad1)" "Net-(C8-Pad2)" "Net-(C9-Pad1)" "Net-(C9-Pad2)" "Net-(C10-Pad1)" "LCH_OUT"
+    "Net-(C11-Pad1)" "RCH_OUT" "Net-(D1-Pad2)" "Net-(D2-Pad2)" "Net-(D3-Pad2)" "Net-(J1-PadA4)" "Net-(J1-PadA5)" "unconnected-(J1-PadA6)"
+    "unconnected-(J1-PadA7)" "unconnected-(J1-PadA8)" "Net-(J1-PadB5)" "unconnected-(J1-PadB6)" "unconnected-(J1-PadB7)" "unconnected-(J1-PadB8)" ~{IRQ} D0
+    ~{IC} D1 ~{ICL} D2 ~{WR} D3 ~{RD} D4
+    ~{CS} D5 CT1 D6 CT2 D7 A0 "CLK_DIP8"
+    CLK "CLK_DIP14" "unconnected-(PS1-Pad5)" "Net-(R1-Pad1)" "Net-(R1-Pad2)" "Net-(R11-Pad1)" "Net-(R11-Pad2)" "Net-(R13-Pad1)"
+    "Net-(R13-Pad2)" "unconnected-(RN1-Pad2)" "unconnected-(RN1-Pad3)" "LCH_FOLLOWER_OUT" "RCH_FOLLOWER_OUT" "unconnected-(SW1-Pad1)" "Net-(U2-Pad1)" "Net-(U2-Pad3)"
+    "Net-(U2-Pad5)" SH2 SH1 DATA PHI1 "unconnected-(X1-Pad1)" "unconnected-(X2-Pad1)"
     (clearance_class default)
     (via_rule default)
     (rule
@@ -92,6 +93,7 @@
     )
   )
   (class Power
+    "-5V" GNDA VDD VBUS GND +5V
     (clearance_class Power)
     (via_rule Power)
     (rule
@@ -102,7 +104,6 @@
     )
   )
   (class Power12
-    +12V GND "-12V" +5V GNDA
     (clearance_class Power12)
     (via_rule Power12)
     (rule
